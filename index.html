@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahavir Engineering | Premium Fabrication</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#000080', 
+                        brandGold: '#b48600', 
+                        darkBg: '#0f172a',
+                        lightBg: '#f8fafc',
+                    },
+                    animation: {
+                        'shine': 'shine 3s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        shine: {
+                            '0%': { backgroundPosition: '200% center' },
+                            '100%': { backgroundPosition: '-200% center' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+                            '50%': { opacity: 0.8, transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #b48600; border-radius: 4px; }
+        
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 128, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 128, 0.05) 1px, transparent 1px);
+            animation: moveGrid 15s linear infinite;
+        }
+        .dark .bg-grid-pattern {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        @keyframes moveGrid {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(40px); }
+        }
+
+        .card-glow:hover { box-shadow: 0 0 25px rgba(0, 0, 128, 0.2); }
+        .dark .card-glow:hover { box-shadow: 0 0 25px rgba(180, 134, 0, 0.3); }
+    </style>
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-gray-900 dark:text-white transition-colors duration-500 font-sans relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel shadow-md transition-all duration-300 bg-white/90 dark:bg-darkBg/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0" data-aos="fade-down">
+                    <span class="text-base sm:text-lg md:text-xl font-bold tracking-widest uppercase">MAHAVIR <span class="text-brandBlue dark:text-brandGold">ENGINEERING</span></span>
+                </div>
+                <div class="flex items-center gap-2 md:gap-4" data-aos="fade-down" data-aos-delay="100">
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:scale-110 transition-transform shadow-md">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-56 lg:pb-32 overflow-hidden px-4 min-h-[90vh] md:min-h-screen flex items-center bg-gradient-to-b from-white to-gray-50 dark:from-darkBg dark:to-slate-900">
+        <div class="absolute inset-0 bg-grid-pattern opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-darkBg to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto text-center w-full relative z-10">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-4 md:mb-6 tracking-tight uppercase" data-aos="zoom-out" data-aos-duration="1200">
+                <span class="inline-block transform hover:scale-105 transition-transform duration-300">MAHAVIR</span> <br/>
+                <span class="animate-shine inline-block text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-brandBlue via-blue-400 to-brandBlue dark:from-brandGold dark:via-yellow-200 dark:to-brandGold">
+                    ENGINEERING
+                </span>
+            </h1>
+            
+            <p class="mt-4 md:mt-6 text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-semibold tracking-wide" data-aos="fade-up" data-aos-delay="300">
+                Precision in <span class="text-brandBlue dark:text-brandGold">Fabrication</span>
+            </p>
+            <p class="mt-3 md:mt-4 text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed px-2" data-aos="fade-up" data-aos-delay="500">
+                Decades of expertise in Acrylic Sheets, Polycarbonate, SS & MS Trading, tailored for industrial and commercial excellence.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="700">
+                <a href="#portfolio" class="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-brandBlue dark:bg-brandGold text-white font-bold rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                    <span class="absolute w-full h-0 transition-all duration-500 origin-center rotate-45 -translate-x-20 bg-white opacity-20 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                    <span class="relative"><i class="fas fa-bolt mr-2"></i> Start Project</span>
+                </a>
+                <a href="#portfolio" class="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 border-2 border-brandBlue dark:border-brandGold text-brandBlue dark:text-brandGold font-bold rounded-full hover:bg-brandBlue hover:text-white dark:hover:bg-brandGold dark:hover:text-darkBg transition-all duration-300 hover:-translate-y-1">
+                    <i class="fas fa-image mr-2"></i> View Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-slate-800/50 transition-colors relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-10 md:mb-16 tracking-tight" data-aos="fade-up">Our Core <span class="text-brandBlue dark:text-brandGold">Services</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="animate-float card-glow bg-white dark:bg-slate-800 p-6 md:p-10 rounded-3xl md:rounded-[2rem] shadow-lg border border-gray-100 dark:border-gray-700 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-50 dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-4 md:mb-6 transform rotate-3 hover:rotate-0 transition-transform">
+                        <i class="fas fa-shield-alt text-2xl md:text-3xl text-brandBlue dark:text-brandGold"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">S.S & M.S Fabrication</h3>
+                    <p class="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed">Premium stainless steel and heavy-duty mild steel work designed for industrial strength.</p>
+                </div>
+                
+                <div class="animate-float card-glow bg-white dark:bg-slate-800 p-6 md:p-10 rounded-3xl md:rounded-[2rem] shadow-lg border border-gray-100 dark:border-gray-700 transition-all duration-500" style="animation-delay: 1s;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-50 dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-4 md:mb-6 transform -rotate-3 hover:rotate-0 transition-transform">
+                        <i class="fas fa-layer-group text-2xl md:text-3xl text-brandBlue dark:text-brandGold"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Acrylic & Polycarbonate</h3>
+                    <p class="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed">All kinds of trading and custom acrylic job work tailored perfectly to your specific requirements.</p>
+                </div>
+                
+                <div class="animate-float card-glow bg-white dark:bg-slate-800 p-6 md:p-10 rounded-3xl md:rounded-[2rem] shadow-lg border border-gray-100 dark:border-gray-700 transition-all duration-500" style="animation-delay: 2s;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-50 dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-4 md:mb-6 transform rotate-3 hover:rotate-0 transition-transform">
+                        <i class="fas fa-toolbox text-2xl md:text-3xl text-brandBlue dark:text-brandGold"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Panel Boxes & Works</h3>
+                    <p class="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed">Expert engineering job works handled by experienced professionals on-site with precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Desk Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors border-t border-gray-100 dark:border-gray-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div data-aos="fade-right" class="relative group mx-auto w-full max-w-md lg:max-w-full">
+                    <div class="absolute inset-0 bg-brandBlue dark:bg-brandGold rounded-[2.5rem] transform translate-x-4 translate-y-4 opacity-20 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                    <div class="relative h-[24rem] md:h-[32rem] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-gray-200 dark:bg-slate-700 flex items-center justify-center">
+                        <img src="images/founder-ghanshyam-vishwakarma.jpeg" alt="Mr. Ghanshyam Vishwakarma" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+
+                <div data-aos="fade-left" class="mt-8 lg:mt-0">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-2 tracking-tight">Meet Our <span class="text-brandBlue dark:text-brandGold">Founder</span></h2>
+                    <h3 class="text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-extrabold mb-6 uppercase tracking-widest">Mr. Ghanshyam Vishwakarma</h3>
+                    
+                    <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        With over <strong class="text-brandBlue dark:text-brandGold text-xl">20+ years of hands-on experience</strong> in the fabrication and engineering industry, Mr. Ghanshyam Vishwakarma has built Mahavir Engineering from the ground up. His deep technical knowledge, precise craftsmanship, and dedication have been the true driving force behind every successful project we deliver.
+                    </p>
+                    
+                    <blockquote class="bg-blue-50 dark:bg-slate-800 p-6 md:p-8 rounded-3xl border-l-4 border-brandBlue dark:border-brandGold shadow-lg relative transform hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fas fa-quote-left text-3xl text-brandBlue/30 dark:text-brandGold/30 absolute top-4 right-6"></i>
+                        <p class="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200 italic mb-4 leading-relaxed relative z-10">
+                            "We never compromise on material quality. Timely delivery and strict safety standards are our true hallmarks."
+                        </p>
+                        <footer class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                            <span class="w-8 h-[2px] bg-brandBlue dark:bg-brandGold inline-block"></span>
+                            Core Principle
+                        </footer>
+                    </blockquote>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section id="portfolio" class="py-16 md:py-24 px-4 max-w-7xl mx-auto bg-gray-50 dark:bg-slate-800/50">
+        <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4 tracking-tight">Real Work <span class="text-brandBlue dark:text-brandGold">Gallery</span></h2>
+            <p class="text-sm md:text-base text-gray-500">Glimpses of our precision fabrication and completed projects.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Precision acrylic enclosures and guarding for high-end pharmaceutical machinery.</span>
+                </div>
+                <img src="images/pharma-machine-acrylic-guard.jpeg" alt="Pharma Machine Acrylic Guard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Expert fabrication team delivering high-standard setups for cleanroom environments.</span>
+                </div>
+                <img src="images/cleanroom-fabrication-team.jpeg" alt="Cleanroom Fabrication Team" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Large-scale stainless steel panel boxes and custom industrial enclosures.</span>
+                </div>
+                <img src="images/ss-industrial-panel-box.jpeg" alt="SS Industrial Panel Box" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Heavy structural fabrication and overhead ducting for large factory setups.</span>
+                </div>
+                <img src="images/heavy-structural-fabrication.jpeg" alt="Heavy Structural Fabrication" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Custom material handling solutions including robust curved roller conveyors.</span>
+                </div>
+                <img src="images/roller-conveyor-system.jpeg" alt="Roller Conveyor System" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Intricate stainless steel piping and heavy-duty valve skid fabrication.</span>
+                </div>
+                <img src="images/ss-piping-valve-skid.jpeg" alt="SS Piping and Valve Skid" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Large-scale structural framing and flawless polycarbonate/glass paneling.</span>
+                </div>
+                <img src="images/industrial-glass-paneling.jpeg" alt="Industrial Glass Paneling" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+            <div class="h-56 md:h-64 bg-gray-200 dark:bg-slate-800 rounded-2xl md:rounded-3xl overflow-hidden group relative cursor-pointer shadow-md hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                <div class="absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 p-4 text-center">
+                    <span class="text-white font-medium tracking-wide text-sm md:text-base">Flawless custom acrylic molding and finishing for specialized industrial parts.</span>
+                </div>
+                <img src="images/custom-acrylic-molding.jpeg" alt="Custom Acrylic Molding" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Maps Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Locate <span class="text-brandBlue dark:text-brandGold">Us</span></h2>
+                    <p class="text-sm md:text-lg text-gray-500 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed">Visit our facility for face-to-face consultation. We are centrally located in Navi Mumbai for easy access.</p>
+                    
+                    <div class="bg-gray-50 dark:bg-slate-800 p-6 md:p-8 rounded-3xl md:rounded-[2rem] shadow-xl border border-gray-200 dark:border-gray-700 mb-6 flex items-start gap-4 md:gap-6 hover:shadow-2xl transition-shadow duration-300">
+                        <div class="p-3 md:p-4 bg-blue-100 dark:bg-slate-700 rounded-full flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-2xl md:text-3xl text-brandBlue dark:text-brandGold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg md:text-xl mb-1 md:mb-2">Head Office & Workshop</h4>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-xs md:text-sm">Trimurti Bhuvan, Room no. 003/152, Near Digha Talav, Thane Belapur Road, Digha, Airoli, Navi Mumbai - 400708</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Map Embed -->
+                <div class="h-64 md:h-[28rem] w-full rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-slate-700 relative group" data-aos="fade-left">
+                    <div class="absolute inset-0 bg-brandBlue/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.4388768255353!2d72.99389697395387!3d19.176024248827275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bf32631ca171%3A0x946fa368a8a47d2b!2sMahavir%20Engineering!5e0!3m2!1sen!2sin!4v1778654257769!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-24 md:pt-16 md:pb-32 transition-colors relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-brandBlue dark:via-brandGold to-transparent opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <h3 class="text-2xl md:text-3xl font-black tracking-widest mb-3 md:mb-4 uppercase text-gray-800 dark:text-gray-100">MAHAVIR <span class="text-brandBlue dark:text-brandGold">ENGINEERING</span></h3>
+            <p class="text-sm md:text-base text-gray-500 dark:text-gray-400 mb-6 md:mb-8 font-medium tracking-wide">Small Scale Business. Large Scale Precision.</p>
+            <p class="text-xs md:text-sm text-gray-400 uppercase tracking-widest">© 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Glassmorphism Dock for Contact Buttons -->
+    <div class="fixed bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-[100] w-max">
+        <div class="flex items-center justify-center gap-3 md:gap-5 px-4 md:px-6 py-2 md:py-3 rounded-full bg-white/75 dark:bg-slate-800/75 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-200/50 dark:border-gray-700/50">
+            
+            <a href="tel:+919821135977" class="w-12 h-12 md:w-14 md:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl md:text-2xl hover:bg-blue-700 hover:-translate-y-1 shadow-md transition-all duration-300" title="Call Us">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://wa.me/919821135977?text=Hello%20Mahavir%20Engineering,%20I%20have%20an%20enquiry%20regarding%20fabrication%20work." target="_blank" class="animate-pulse-soft w-12 h-12 md:w-14 md:h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl md:text-3xl hover:bg-green-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="WhatsApp Us">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mahavireng9992@gmail.com&su=Enquiry%20from%20Website&body=Hello%20Mahavir%20Engineering%20Team," target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-red-500 text-white rounded-full flex items-center justify-center text-lg md:text-xl hover:bg-red-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="Email Us">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+        </div>
+    </div>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, 
+            offset: 50, 
+            duration: 800, 
+            easing: 'ease-out-cubic',
+        });
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
