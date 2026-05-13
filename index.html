@@ -11,6 +11,12 @@
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Vercel Analytics for HTML -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -116,6 +122,13 @@
         .gallery-item.tap-active .gallery-overlay { opacity: 1 !important; }
         .gallery-item.tap-active .gallery-img { transform: scale(1.1) !important; }
 
+        /* IMAGE PROTECTION CLASS (No Download, But Allow Touch) */
+        .protect-img {
+            -webkit-touch-callout: none; /* Stops mobile long-press popup */
+            -webkit-user-select: none;
+            user-select: none;
+            pointer-events: auto; /* Allows Javascript clicks/touches */
+        }
     </style>
 </head>
 <body class="bg-lightBg dark:bg-darkBg text-gray-900 dark:text-white transition-colors duration-500 font-sans relative">
@@ -169,7 +182,7 @@
         </div>
     </section>
 
-    <!-- Services Grid (Background: Gray) -->
+    <!-- Services Grid -->
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-slate-800/50 transition-colors relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold text-center mb-10 md:mb-16 tracking-tight" data-aos="fade-up">Our Core <span class="text-brandBlue dark:text-brandGold">Services</span></h2>
@@ -202,7 +215,7 @@
         </div>
     </section>
 
-    <!-- Project Gallery (MOVED UP - Background: White) -->
+    <!-- Project Gallery (Background: White) -->
     <section id="portfolio" class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors border-t border-gray-100 dark:border-gray-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
@@ -216,7 +229,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Precision acrylic enclosures and guarding for high-end pharmaceutical machinery.</span>
                     </div>
-                    <img src="images/pharma-machine-acrylic-guard.jpeg" alt="Pharma Machine Acrylic Guard" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/pharma-machine-acrylic-guard.jpeg" alt="Pharma Machine" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 2 -->
@@ -224,7 +237,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Expert fabrication team delivering high-standard setups for cleanroom environments.</span>
                     </div>
-                    <img src="images/cleanroom-fabrication-team.jpeg" alt="Cleanroom Fabrication Team" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/cleanroom-fabrication-team.jpeg" alt="Cleanroom Fabrication" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 3 -->
@@ -232,7 +245,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Large-scale stainless steel panel boxes and custom industrial enclosures.</span>
                     </div>
-                    <img src="images/ss-industrial-panel-box.jpeg" alt="SS Industrial Panel Box" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/ss-industrial-panel-box.jpeg" alt="SS Industrial Panel" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 4 -->
@@ -240,7 +253,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Heavy structural fabrication and overhead ducting for large factory setups.</span>
                     </div>
-                    <img src="images/heavy-structural-fabrication.jpeg" alt="Heavy Structural Fabrication" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/heavy-structural-fabrication.jpeg" alt="Structural Fabrication" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 5 -->
@@ -248,7 +261,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Custom material handling solutions including robust curved roller conveyors.</span>
                     </div>
-                    <img src="images/roller-conveyor-system.jpeg" alt="Roller Conveyor System" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/roller-conveyor-system.jpeg" alt="Conveyor System" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 6 -->
@@ -256,7 +269,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Intricate stainless steel piping and heavy-duty valve skid fabrication.</span>
                     </div>
-                    <img src="images/ss-piping-valve-skid.jpeg" alt="SS Piping and Valve Skid" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/ss-piping-valve-skid.jpeg" alt="SS Piping Skid" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 7 -->
@@ -264,7 +277,7 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Large-scale structural framing and flawless polycarbonate/glass paneling.</span>
                     </div>
-                    <img src="images/industrial-glass-paneling.jpeg" alt="Industrial Glass Paneling" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/industrial-glass-paneling.jpeg" alt="Glass Paneling" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
 
                 <!-- GALLERY ITEM 8 -->
@@ -272,13 +285,13 @@
                     <div class="gallery-overlay absolute inset-0 bg-brandBlue/90 dark:bg-brandGold/90 flex items-center justify-center opacity-0 transition-opacity duration-500 z-10 p-4 text-center">
                         <span class="text-white font-medium tracking-wide text-sm md:text-base">Flawless custom acrylic molding and finishing for specialized industrial parts.</span>
                     </div>
-                    <img src="images/custom-acrylic-molding.jpeg" alt="Custom Acrylic Molding" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500">
+                    <img src="images/custom-acrylic-molding.jpeg" alt="Acrylic Molding" oncontextmenu="return false;" draggable="false" class="gallery-img w-full h-full object-cover transform transition-transform duration-500 protect-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Founder's Desk Section (MOVED DOWN - Background: Gray) -->
+    <!-- Founder's Desk Section (Background: Gray) -->
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-slate-800/50 transition-colors border-t border-gray-100 dark:border-gray-800 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -288,7 +301,7 @@
                     <div class="relative h-[24rem] md:h-[32rem] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-gray-200 dark:bg-slate-700 flex items-center justify-center">
                         <img src="images/founder-ghanshyam-vishwakarma.jpeg" alt="Mr. Ghanshyam Vishwakarma" 
                              oncontextmenu="return false;" draggable="false" 
-                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 select-none pointer-events-none">
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 protect-img">
                     </div>
                 </div>
 
@@ -352,7 +365,7 @@
         </div>
     </section>
 
-    <!-- Footer (Background: Gray) -->
+    <!-- Footer -->
     <footer class="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-24 md:pt-16 md:pb-32 transition-colors relative overflow-hidden">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-brandBlue dark:via-brandGold to-transparent opacity-20"></div>
         <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
@@ -372,7 +385,8 @@
             <a href="https://wa.me/919821135977?text=Hello%20Mahavir%20Engineering,%20I%20have%20an%20enquiry%20regarding%20fabrication%20work." target="_blank" class="animate-pulse-soft w-12 h-12 md:w-14 md:h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl md:text-3xl hover:bg-green-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="WhatsApp Us">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mahavireng9992@gmail.com&su=Enquiry%20from%20Website&body=Hello%20Mahavir%20Engineering%20Team," target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-red-500 text-white rounded-full flex items-center justify-center text-lg md:text-xl hover:bg-red-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="Email Us">
+            <!-- EMAIL BUTTON: DYNAMIC (Script handles click) -->
+            <a id="email-btn" href="#" class="w-12 h-12 md:w-14 md:h-14 bg-red-500 text-white rounded-full flex items-center justify-center text-lg md:text-xl hover:bg-red-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="Email Us">
                 <i class="fas fa-envelope"></i>
             </a>
             
@@ -397,6 +411,21 @@
             html.classList.toggle('dark');
         });
 
+        // Dynamic Email Logic (Mobile Native vs Desktop Webmail)
+        const emailBtn = document.getElementById('email-btn');
+        const emailAddress = 'mahavireng9992@gmail.com';
+        const emailSubject = 'Enquiry from Website';
+        const emailBody = 'Hello Mahavir Engineering Team,';
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Open default mail app on mobile
+            emailBtn.href = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        } else {
+            // Open modern Gmail compose tab on laptop/desktop
+            emailBtn.href = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            emailBtn.target = '_blank';
+        }
+
         // Start Project Button Animation Logic
         function highlightContactDock(e) {
             e.preventDefault();
@@ -411,7 +440,7 @@
 
         // Mobile Touch Toggle Logic for Gallery
         function toggleGallery(element) {
-            if (window.matchMedia("(hover: none)").matches) {
+            if (window.matchMedia("(hover: none)").matches || ('ontouchstart' in window)) {
                 const isActive = element.classList.contains('tap-active');
                 document.querySelectorAll('.gallery-item').forEach(el => {
                     el.classList.remove('tap-active');
