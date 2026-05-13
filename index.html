@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Mahavir Engineering-Digha</title>
+    <meta name="title" content="Mahavir Engineering | Premium Fabrication">
+    <meta name="description" content="Decades of expertise in Acrylic Sheets, Polycarbonate, SS & MS Fabrication. Small Scale Business. Large Scale Precision.">
+
+    <!-- Open Graph / WhatsApp / Facebook Link Preview -->
+    <meta property="og:type" content="website">
+    <!-- Niche wale link ko apne asli Vercel link se replace kar dena deploy ke baad -->
+    <meta property="og:url" content="https://YOUR_VERCEL_LINK.vercel.app/"> 
+    <meta property="og:title" content="Mahavir Engineering | Premium Fabrication">
+    <meta property="og:description" content="Decades of expertise in Acrylic Sheets, Polycarbonate, SS & MS Fabrication. Small Scale Business. Large Scale Precision.">
+    <!-- DHYAN DE: Yahan bhi apna Vercel link dalna taaki photo WhatsApp par dikhe -->
+    <meta property="og:image" content="https://YOUR_VERCEL_LINK.vercel.app/images/og-image.jpg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Icons -->
@@ -100,16 +114,20 @@
             border-color: #b48600 !important;
         }
 
-        /* Attention Animation for Dark Mode Toggle */
+        /* Attention Animation for Dark Mode Toggle (VS Code Error Fixed) */
+        :root {
+            --shake-glow: rgba(0,0,128,0.4); /* Blue glow for Light Mode */
+        }
+        .dark {
+            --shake-glow: rgba(180,134,0,0.4); /* Gold glow for Dark Mode */
+        }
+        
         @keyframes attentionShake {
             0%, 100% { transform: rotate(0deg) scale(1); box-shadow: none; }
-            15%, 45%, 75% { transform: rotate(-10deg) scale(1.15); box-shadow: 0 0 15px rgba(0,0,128,0.4); }
-            30%, 60% { transform: rotate(10deg) scale(1.15); box-shadow: 0 0 15px rgba(0,0,128,0.4); }
+            15%, 45%, 75% { transform: rotate(-10deg) scale(1.15); box-shadow: 0 0 15px var(--shake-glow); }
+            30%, 60% { transform: rotate(10deg) scale(1.15); box-shadow: 0 0 15px var(--shake-glow); }
         }
-        .dark @keyframes attentionShake {
-            15%, 45%, 75% { box-shadow: 0 0 15px rgba(180,134,0,0.4); }
-            30%, 60% { box-shadow: 0 0 15px rgba(180,134,0,0.4); }
-        }
+        
         .animate-attention {
             animation: attentionShake 1.2s cubic-bezier(.36,.07,.19,.97) 1.5s both;
         }
@@ -365,7 +383,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Background: Gray) -->
     <footer class="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-24 md:pt-16 md:pb-32 transition-colors relative overflow-hidden">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-brandBlue dark:via-brandGold to-transparent opacity-20"></div>
         <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
