@@ -11,12 +11,22 @@
 
     <!-- Open Graph / WhatsApp / Facebook Link Preview -->
     <meta property="og:type" content="website">
-    <!-- Niche wale link ko apne asli Vercel link se replace kar dena deploy ke baad -->
-    <meta property="og:url" content="https://mahavir-engineering.vercel.app"> 
+    <meta property="og:url" content="https://mahavir-engineering.vercel.app/"> 
     <meta property="og:title" content="Mahavir Engineering | Premium Fabrication">
     <meta property="og:description" content="Decades of expertise in Acrylic Sheets, Polycarbonate, SS & MS Fabrication. Small Scale Business. Large Scale Precision.">
-    <!-- DHYAN DE: Yahan bhi apna Vercel link dalna taaki photo WhatsApp par dikhe -->
-    <meta property="og:image" content="https://mahavir-engineering.vercel.app/images/og-image.jpeg">
+    <!-- WhatsApp specific tags -->
+    <meta property="og:image" itemprop="image" content="https://mahavir-engineering.vercel.app/images/og-image.jpeg">
+    <meta property="og:image:secure_url" content="https://mahavir-engineering.vercel.app/images/og-image.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mahavir-engineering.vercel.app/">
+    <meta name="twitter:title" content="Mahavir Engineering | Premium Fabrication">
+    <meta name="twitter:description" content="Decades of expertise in Acrylic Sheets, Polycarbonate, SS & MS Fabrication.">
+    <meta name="twitter:image" content="https://mahavir-engineering.vercel.app/images/og-image.jpeg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -233,7 +243,7 @@
         </div>
     </section>
 
-    <!-- Project Gallery (Background: White) -->
+    <!-- Project Gallery -->
     <section id="portfolio" class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors border-t border-gray-100 dark:border-gray-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
@@ -309,7 +319,7 @@
         </div>
     </section>
 
-    <!-- Founder's Desk Section (Background: Gray) -->
+    <!-- Founder's Desk Section -->
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-slate-800/50 transition-colors border-t border-gray-100 dark:border-gray-800 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -347,7 +357,7 @@
         </div>
     </section>
 
-    <!-- Location & Maps Section (Background: White) -->
+    <!-- Location & Maps Section -->
     <section class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors border-t border-gray-100 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -383,7 +393,7 @@
         </div>
     </section>
 
-    <!-- Footer (Background: Gray) -->
+    <!-- Footer -->
     <footer class="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-24 md:pt-16 md:pb-32 transition-colors relative overflow-hidden">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-brandBlue dark:via-brandGold to-transparent opacity-20"></div>
         <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
@@ -403,7 +413,6 @@
             <a href="https://wa.me/919821135977?text=Hello%20Mahavir%20Engineering,%20I%20have%20an%20enquiry%20regarding%20fabrication%20work." target="_blank" class="animate-pulse-soft w-12 h-12 md:w-14 md:h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl md:text-3xl hover:bg-green-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="WhatsApp Us">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <!-- EMAIL BUTTON: DYNAMIC (Script handles click) -->
             <a id="email-btn" href="#" class="w-12 h-12 md:w-14 md:h-14 bg-red-500 text-white rounded-full flex items-center justify-center text-lg md:text-xl hover:bg-red-600 hover:-translate-y-1 shadow-md transition-all duration-300" title="Email Us">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -436,10 +445,8 @@
         const emailBody = 'Hello Mahavir Engineering Team,';
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // Open default mail app on mobile
             emailBtn.href = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         } else {
-            // Open modern Gmail compose tab on laptop/desktop
             emailBtn.href = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
             emailBtn.target = '_blank';
         }
